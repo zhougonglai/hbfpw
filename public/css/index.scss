@@ -1,0 +1,30 @@
+.home {
+	background-image: url('/images/wbn.jpg');
+	background-size: contain;
+	background-position: top center;
+	background-repeat: no-repeat;
+	background-color: #f5f5f5;
+	width: 750px;
+	min-height: 100vh;
+	overflow-y: auto;
+	-webkit-overflow-scrolling: touch;
+	display: flex;
+	flex-direction: column;
+
+	.grid {
+		margin-top: 275px;
+		width: 100vw;
+		padding: 0;
+		--mdc-layout-grid-gutter-phone: 0;
+
+		.material-icons {
+			margin-bottom: 16px;
+			font-size: 54px;
+		}
+
+		.mdc-layout-grid__cell--align-middle {
+			padding: 16px 0;
+			widows: -webkit-fill-available;
+		}
+	}
+}
