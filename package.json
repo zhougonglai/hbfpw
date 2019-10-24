@@ -8,6 +8,7 @@
 		"start": "next start"
 	},
 	"dependencies": {
+		"@material/react-card": "^0.15.0",
 		"@material/react-icon-button": "^0.15.0",
 		"@material/react-layout-grid": "^0.15.0",
 		"@material/react-material-icon": "^0.15.0",
@@ -16,6 +17,7 @@
 		"@material/react-tab-bar": "^0.15.0",
 		"@material/react-tab-indicator": "^0.15.0",
 		"@material/react-tab-scroller": "^0.15.0",
+		"@material/react-typography": "^0.15.0",
 		"next": "9.1.1",
 		"react": "16.11.0",
 		"react-dom": "16.11.0"

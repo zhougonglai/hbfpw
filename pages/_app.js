@@ -1,13 +1,17 @@
 import App from 'next/app';
 
-class MyApp extends App {
-	componentDidMount() {
-		console.log('componentDidMount');
-	}
+const Noop = ({ children }) => children;
 
+class MyApp extends App {
 	render() {
 		const { Component, pageProps } = this.props;
-		return <Component {...pageProps} />;
+		const Layout = Component.Layout || Noop;
+
+		return (
+			<Layout>
+				<Component {...pageProps} />
+			</Layout>
+		);
 	}
 }
 

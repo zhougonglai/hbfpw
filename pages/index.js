@@ -1,91 +1,51 @@
-import { Cell, Grid, Row } from '@material/react-layout-grid';
-import Tab from '@material/react-tab';
-import TabBar from '@material/react-tab-bar';
-import TabScroller from '@material/react-tab-scroller';
-import MaterialIcon from '@material/react-material-icon';
-import Head from '../components/head';
-import '../public/css/index.scss';
+import Card, {
+	CardPrimaryContent,
+	CardMedia,
+	CardActions,
+	CardActionButtons,
+	CardActionIcons,
+} from '@material/react-card';
+import { Grid, Row, Cell } from '@material/react-layout-grid';
+import { Headline6 } from '@material/react-typography';
+import HomeLayout from '../components/layout/home';
+import BouncingLoader from '../components/bouncing-loader';
 
-export default class Home extends React.Component {
+export default class Index extends React.Component {
+	static Layout = HomeLayout;
 	state = {
-		activeIndex: 0,
+		list: [],
 	};
 
-	handleActiveIndexUpdate = activeIndex => this.setState({ activeIndex });
+	async componentDidMount() {
+		const { data } = await fetch('/api/list').then(res => res.json());
+		this.setState({ list: data });
+	}
 
 	render() {
 		return (
-			<div className='home'>
-				<Head title='首页' />
-				<Grid className='grid'>
-					<Row className='justify-items-center text-center border-bottom-1px'>
-						<Cell
-							phoneColumns={1}
-							tabletColumns={2}
-							desktopColumns={3}
-							align='middle'>
-							<MaterialIcon icon='gavel' className=' text-danger' />
-							<div>公司简介</div>
-						</Cell>
-						<Cell
-							phoneColumns={1}
-							tabletColumns={2}
-							desktopColumns={3}
-							align='middle'>
-							<MaterialIcon icon='menu_book' className='text-danger' />
-							<div>法拍知识</div>
-						</Cell>
-						<Cell
-							phoneColumns={1}
-							tabletColumns={2}
-							desktopColumns={3}
-							align='middle'>
-							<MaterialIcon icon='linear_scale' className='text-danger' />
-							<div>服务章程</div>
-						</Cell>
-						<Cell
-							phoneColumns={1}
-							tabletColumns={2}
-							desktopColumns={3}
-							align='middle'>
-							<MaterialIcon icon='phone_callback' className='text-danger' />
-							<div>联系我们</div>
-						</Cell>
-					</Row>
-				</Grid>
+			<div className='lists'>
+				{this.state.list.length ? (
+					<Grid>
+						<Row>
+							{this.state.list.map(item => (
+								<Cell phoneColumns={2} tabletColumns={4} desktopColumns={6}>
+									<Card>
+										<CardPrimaryContent>
+											<CardMedia wide imageUrl={item.img} />
 
-				<div className='toolbar'>
-					<TabBar
-						activeIndex={this.state.activeIndex}
-						handleActiveIndexUpdate={this.handleActiveIndexUpdate}
-						className='col-3'>
-						<Tab>
-							<span className='mdc-tab__text-label'>住宅</span>
-						</Tab>
-						<Tab>
-							<span className='mdc-tab__text-label'>别墅</span>
-						</Tab>
-						<Tab>
-							<span className='mdc-tab__text-label'>商铺</span>
-						</Tab>
-						<Tab>
-							<span className='mdc-tab__text-label'>商铺</span>
-						</Tab>
-						<Tab>
-							<span className='mdc-tab__text-label'>商铺</span>
-						</Tab>
-						<Tab>
-							<span className='mdc-tab__text-label'>商铺</span>
-						</Tab>
-						<Tab>
-							<span className='mdc-tab__text-label'>商铺</span>
-						</Tab>
-						<Tab>
-							<span className='mdc-tab__text-label'>商铺</span>
-						</Tab>
-					</TabBar>
-					<div className='col-1 tool-item'>更多</div>
-				</div>
+											<div className='ma-1 larger bold'>{item.title}</div>
+											<div className='actions ma-1'>
+												<div className='price text-danger'>¥{item.price}</div>
+											</div>
+										</CardPrimaryContent>
+									</Card>
+								</Cell>
+							))}
+						</Row>
+					</Grid>
+				) : (
+					<BouncingLoader />
+				)}
 			</div>
 		);
 	}
