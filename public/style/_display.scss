@@ -60,3 +60,19 @@
 	@extend .large;
 	@extend .bold;
 }
+
+.col-1 {
+	flex: 1;
+}
+
+.col-2 {
+	flex: 2;
+}
+
+.col-3 {
+	flex: 3;
+}
+
+.col-4 {
+	flex: 4;
+}

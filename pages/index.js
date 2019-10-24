@@ -1,6 +1,7 @@
 import { Cell, Grid, Row } from '@material/react-layout-grid';
 import Tab from '@material/react-tab';
 import TabBar from '@material/react-tab-bar';
+import TabScroller from '@material/react-tab-scroller';
 import MaterialIcon from '@material/react-material-icon';
 import Head from '../components/head';
 import '../public/css/index.scss';
@@ -52,19 +53,39 @@ export default class Home extends React.Component {
 						</Cell>
 					</Row>
 				</Grid>
-				<TabBar
-					activeIndex={this.state.activeIndex}
-					handleActiveIndexUpdate={this.handleActiveIndexUpdate}>
-					<Tab>
-						<span className='mdc-tab__text-label'>住宅</span>
-					</Tab>
-					<Tab>
-						<span className='mdc-tab__text-label'>别墅</span>
-					</Tab>
-					<Tab>
-						<span className='mdc-tab__text-label'>商铺</span>
-					</Tab>
-				</TabBar>
+
+				<div className='toolbar'>
+					<TabBar
+						activeIndex={this.state.activeIndex}
+						handleActiveIndexUpdate={this.handleActiveIndexUpdate}
+						className='col-3'>
+						<Tab>
+							<span className='mdc-tab__text-label'>住宅</span>
+						</Tab>
+						<Tab>
+							<span className='mdc-tab__text-label'>别墅</span>
+						</Tab>
+						<Tab>
+							<span className='mdc-tab__text-label'>商铺</span>
+						</Tab>
+						<Tab>
+							<span className='mdc-tab__text-label'>商铺</span>
+						</Tab>
+						<Tab>
+							<span className='mdc-tab__text-label'>商铺</span>
+						</Tab>
+						<Tab>
+							<span className='mdc-tab__text-label'>商铺</span>
+						</Tab>
+						<Tab>
+							<span className='mdc-tab__text-label'>商铺</span>
+						</Tab>
+						<Tab>
+							<span className='mdc-tab__text-label'>商铺</span>
+						</Tab>
+					</TabBar>
+					<div className='col-1 tool-item'>更多</div>
+				</div>
 			</div>
 		);
 	}

@@ -134,3 +134,13 @@ $n: 8px;
 	position: relative;
 	width: -webkit-fill-available;
 }
+
+.toolbar {
+	display: flex;
+	width: 100vw;
+	.tool-item {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+	}
+}
