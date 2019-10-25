@@ -109,7 +109,7 @@ $n: 8px;
 
 // @import '@material/react-button/index.scss';
 @import '@material/react-material-icon/index.scss';
-// @import '@material/react-text-field/index.scss';
+@import '@material/react-text-field/index.scss';
 @import '@material/react-icon-button/index.scss';
 @import '@material/react-layout-grid/index.scss';
 @import '@material/react-ripple/index.scss';
@@ -135,9 +135,18 @@ $n: 8px;
 	color: var(--mdc-theme-primary, #f5222d) !important;
 }
 
-.mdc-text-field--focused:not(.mdc-text-field--disabled) .mdc-floating-label {
-	color: var(--mdc-theme-primary);
+input {
+	font-family: 'Google Sans', Roboto, Arial, sans-serif;
+	color: #3c4043;
+	letter-spacing: 0.00625em;
+	font-size: 1rem;
+	font-weight: 500;
+	line-height: 1.5rem;
 }
+
+// .mdc-text-field--focused:not(.mdc-text-field--disabled) .mdc-floating-label {
+// 	color: var(--mdc-theme-primary);
+// }
 
 .ripple-icon-component {
 	@include mdc-ripple-surface;
