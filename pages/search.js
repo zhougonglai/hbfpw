@@ -4,9 +4,9 @@ import TopAppBar, {
 	TopAppBarRow,
 } from '@material/react-top-app-bar';
 import MaterialIcon from '@material/react-material-icon';
+import Router from 'next/router';
 import Head from '../components/head';
 import '../public/css/search.scss';
-import Router from 'next/router';
 
 export default class SearchPage extends React.Component {
 	state = {
@@ -26,8 +26,8 @@ export default class SearchPage extends React.Component {
 						<TopAppBarIcon navIcon tabIndex={0}>
 							<MaterialIcon hasRipple icon='arrow_back' onClick={this.goBack} />
 						</TopAppBarIcon>
-						<div className='search-input-content'>
-							<div className='search-input shadow-2 hairlines'>
+						<div className='search-input-content hairlines'>
+							<div className='search-input'>
 								<input
 									placeholder='户型/地址'
 									value={this.state.value}
@@ -36,7 +36,7 @@ export default class SearchPage extends React.Component {
 									}
 								/>
 								<div className='icon'>
-									<MaterialIcon hasRipple icon='search' className='hairlines' />
+									<MaterialIcon hasRipple icon='search' />
 								</div>
 							</div>
 						</div>
