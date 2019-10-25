@@ -18,7 +18,8 @@ p {
 }
 
 :root {
-	--mdc-theme-primary: #ff4d4f;
+	--mdc-theme-primary: #f5222d;
+	--mdc-theme-on-primary: #5f6368;
 	/* light */
 	--geekblue-1: #fff1f0;
 	--geekblue-2: #ffccc7;
@@ -117,10 +118,21 @@ $n: 8px;
 @import '@material/react-tab-indicator/index.scss';
 @import '@material/react-tab-scroller/index.scss';
 @import '@material/react-card/index.scss';
+@import '@material/react-top-app-bar/index.scss';
+@import '@material/react-drawer/index.scss';
+@import '@material/react-list/index.scss';
 
 // reset
 .mdc-button-shaped {
 	border-radius: 18px !important;
+}
+.mdc-top-app-bar__title {
+	color: var(--mdc-theme-on-primary, #5f6368);
+}
+
+.mdc-list-item--selected,
+.mdc-list-item--activated {
+	color: var(--mdc-theme-primary, #f5222d) !important;
 }
 
 .mdc-text-field--focused:not(.mdc-text-field--disabled) .mdc-floating-label {

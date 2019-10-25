@@ -1,0 +1,22 @@
+.root {
+	background-color: white;
+	width: 750px;
+	-webkit-overflow-scrolling: touch;
+	display: flex;
+	flex-direction: row;
+
+	header {
+		--mdc-theme-primary: white;
+	}
+
+	.mdc-list-group {
+		height: inherit;
+		display: flex;
+		flex-direction: column;
+	}
+
+	.drawer-app-content {
+		flex: auto;
+		overflow: auto;
+	}
+}

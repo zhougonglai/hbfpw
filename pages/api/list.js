@@ -27,7 +27,49 @@ export default (req, res) => {
 		square: 80,
 	};
 
+	const arr5 = {
+		img: 'https://hbfpw.net/uploads/191018/2-19101R33004319.jpg',
+		title: '乐花园7栋4单元1层02室的房产',
+		price: 161.728,
+		square: 110.83,
+	};
+
+	const arr6 = {
+		img: 'https://hbfpw.net/uploads/191023/2-1910230AG12X.jpg',
+		title: '邾城街刘集村1-3层房地产',
+		price: 38.232,
+		square: 58.5,
+	};
+
+	const arr7 = {
+		img: 'https://hbfpw.net/uploads/191021/2-1910212042221A.jpg',
+		title: '东湖新技术开发区武黄公路189号华乐花园7栋4单元',
+		price: 161.729,
+		square: 110.83,
+	};
+
+	const arr8 = {
+		img: 'https://hbfpw.net/uploads/191016/2-191016223530222.jpg',
+		title: '中央文化旅游区一期K9-1地块5栋3单元37层2号房产',
+		price: 1165.32,
+		square: 110.83,
+	};
+
+	const arr9 = {
+		img: 'https://hbfpw.net/uploads/191025/2-191025064RbL.jpg',
+		title: '松涛苑D区6栋604室房地产',
+		price: 171.628,
+		square: 110.83,
+	};
+
+	const arr0 = {
+		img: 'https://hbfpw.net/uploads/191023/2-191023013920b4.jpg',
+		title: '单洞路18号（聚银大厦）16层11室房屋',
+		price: 121.31,
+		square: 96.12,
+	};
+
 	res.json({
-		data: [arr1, arr2, arr3, arr4],
+		data: [arr1, arr2, arr3, arr4, arr5, arr6, arr7, arr8, arr9, arr0],
 	});
 };
