@@ -24,7 +24,7 @@ export default class Root extends React.Component {
 								<Cell
 									phoneColumns={2}
 									tabletColumns={4}
-									desktopColumns={6}
+									desktopColumns={3}
 									key={key}>
 									<Card>
 										<CardPrimaryContent>
