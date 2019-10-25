@@ -1,14 +1,8 @@
-import Card, {
-	CardPrimaryContent,
-	CardMedia,
-	CardActions,
-	CardActionButtons,
-	CardActionIcons,
-} from '@material/react-card';
+import Card, { CardPrimaryContent, CardMedia } from '@material/react-card';
 import { Grid, Row, Cell } from '@material/react-layout-grid';
-import { Headline6 } from '@material/react-typography';
 import HomeLayout from '../components/layout/home';
 import BouncingLoader from '../components/bouncing-loader';
+import '../public/css/index.list.scss';
 
 export default class Index extends React.Component {
 	static Layout = HomeLayout;
@@ -27,15 +21,32 @@ export default class Index extends React.Component {
 				{this.state.list.length ? (
 					<Grid>
 						<Row>
-							{this.state.list.map(item => (
-								<Cell phoneColumns={2} tabletColumns={4} desktopColumns={6}>
+							{this.state.list.map((item, key) => (
+								<Cell
+									phoneColumns={2}
+									tabletColumns={4}
+									desktopColumns={6}
+									key={key}>
 									<Card>
 										<CardPrimaryContent>
 											<CardMedia wide imageUrl={item.img} />
 
-											<div className='ma-1 larger bold'>{item.title}</div>
+											<div className='mt-1 mx-1 bold'>{item.title}</div>
 											<div className='actions ma-1'>
-												<div className='price text-danger'>¥{item.price}</div>
+												<div className='price'>
+													<span className='prefix text-danger'>¥</span>
+													<span className='larger bold text-danger'>
+														{item.price}
+													</span>
+													<span className='subfix text-danger'>万</span>
+													<small
+														className='text-gray'
+														style={{ marginLeft: '4px' }}>
+														起拍
+													</small>
+												</div>
+												<div className='fill' />
+												<div className='square text-gray'>{item.square}㎡</div>
 											</div>
 										</CardPrimaryContent>
 									</Card>
