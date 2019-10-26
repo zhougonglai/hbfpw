@@ -27,7 +27,7 @@ export default class Villa extends React.Component {
 									tabletColumns={4}
 									desktopColumns={6}
 									key={key}>
-									<Card>
+									<Card className='card hairlines'>
 										<CardPrimaryContent>
 											<CardMedia wide imageUrl={item.img} />
 
