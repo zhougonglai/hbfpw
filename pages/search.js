@@ -1,48 +1,33 @@
-import TopAppBar, {
-	TopAppBarFixedAdjust,
-	TopAppBarIcon,
-	TopAppBarRow,
-} from '@material/react-top-app-bar';
-import MaterialIcon from '@material/react-material-icon';
-import Router from 'next/router';
-import Head from '../components/head';
+import List, {
+	ListItem,
+	ListItemText,
+	ListGroup,
+	ListGroupSubheader,
+	ListDivider,
+} from '@material/react-list';
+import SearchLayout from '../components/layout/SearchLayout';
 import '../public/css/search.scss';
 
 export default class SearchPage extends React.Component {
-	state = {
-		value: '',
-	};
-
-	goBack = () => {
-		Router.back();
-	};
-
+	static Layout = SearchLayout;
 	render() {
 		return (
-			<div className='search'>
-				<Head title='湖北法拍网' />
-				<TopAppBar fixed>
-					<TopAppBarRow className='row align-center'>
-						<TopAppBarIcon navIcon tabIndex={0}>
-							<MaterialIcon hasRipple icon='arrow_back' onClick={this.goBack} />
-						</TopAppBarIcon>
-						<div className='search-input-content hairlines'>
-							<div className='search-input'>
-								<input
-									placeholder='户型/地址'
-									value={this.state.value}
-									onChange={e =>
-										this.setState({ value: e.currentTarget.value })
-									}
-								/>
-								<div className='icon'>
-									<MaterialIcon hasRipple icon='search' />
-								</div>
-							</div>
-						</div>
-					</TopAppBarRow>
-				</TopAppBar>
-				<TopAppBarFixedAdjust>search</TopAppBarFixedAdjust>
+			<div className='search-content'>
+				<ListGroup>
+					<ListGroupSubheader tag='h2'>Folders</ListGroupSubheader>
+					<List>
+						<ListItem>
+							<ListItemText primaryText='Photos' />
+						</ListItem>
+					</List>
+					<ListDivider tag='div' />
+					<ListGroupSubheader tag='h2'>Recent Files</ListGroupSubheader>
+					<List>
+						<ListItem>
+							<ListItemText primaryText='Vacation' />
+						</ListItem>
+					</List>
+				</ListGroup>
 			</div>
 		);
 	}
