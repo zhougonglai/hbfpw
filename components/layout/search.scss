@@ -3,9 +3,19 @@
 	background-color: white;
 	width: 750px;
 	-webkit-overflow-scrolling: touch;
-	header {
-		--mdc-theme-primary: #e8eaed;
 
+	@media (min-width: 840px) {
+		header {
+			--mdc-theme-primary: white;
+		}
+	}
+
+	@media (max-width: 840px) {
+		header {
+			--mdc-theme-primary: #e8eaed;
+		}
+	}
+	header {
 		.search-input-content.hairlines {
 			display: flex;
 			align-items: center;
