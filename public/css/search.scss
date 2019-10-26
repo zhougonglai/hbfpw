@@ -1,3 +1,21 @@
 .search-content {
-	height: -webkit-fill-available;
+	padding: 0 8px;
+	display: flex;
+	justify-content: center;
+	.tag-group.hairlines {
+		flex-grow: 1;
+		border-radius: 8px;
+		margin-top: 8px;
+		padding-top: 0.1px;
+		padding: 8px;
+		max-width: 720px;
+
+		.mdc-typography--subtitle2 {
+			margin: 0.6em 0.5rem;
+		}
+
+		.mdc-chip {
+			border-radius: 5px;
+		}
+	}
 }

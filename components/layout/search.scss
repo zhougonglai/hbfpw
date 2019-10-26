@@ -9,17 +9,18 @@
 		.search-input-content.hairlines {
 			display: flex;
 			align-items: center;
+			justify-content: center;
 			flex-grow: 1;
-			max-width: 720px;
 			height: inherit;
 			padding: 0 12px;
 			.search-input {
 				border-radius: 5px;
 				height: 42px;
 				display: flex;
+				flex: 1;
 				align-items: center;
 				overflow: hidden;
-				width: 100%;
+				max-width: 720px;
 				background-color: var(--mdc-theme-primary, #e8eaed);
 				transition: box-shadow 425ms ease, background-color 625ms 125ms ease-out;
 				box-shadow: 0px 2px 1px -1px rgba(0, 0, 0, 0.2),
@@ -57,6 +58,12 @@
 				vertical-align: top;
 				z-index: auto;
 			}
+		}
+
+		.icon-fill.hairlines {
+			width: 24px;
+			height: 24px;
+			padding: 12px;
 		}
 	}
 	.mdc-top-app-bar--fixed-adjust {

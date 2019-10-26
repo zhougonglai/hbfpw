@@ -41,6 +41,7 @@ export default class SearchPage extends React.Component {
 								</div>
 							</div>
 						</div>
+						<div className='icon-fill hairlines'></div>
 					</TopAppBarRow>
 				</TopAppBar>
 				<TopAppBarFixedAdjust>{children}</TopAppBarFixedAdjust>
