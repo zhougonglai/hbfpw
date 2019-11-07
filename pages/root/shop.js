@@ -25,7 +25,7 @@ export default class Shope extends React.Component {
 								<Cell
 									phoneColumns={2}
 									tabletColumns={4}
-									desktopColumns={6}
+									desktopColumns={3}
 									key={key}>
 									<Card className='card hairlines'>
 										<CardPrimaryContent>
